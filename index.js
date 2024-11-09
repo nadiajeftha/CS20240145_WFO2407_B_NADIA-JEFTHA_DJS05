@@ -9,14 +9,14 @@ store.dispatch = function (action) {
   switch (action.type) {
     case "ADD":
       this.state = { count: this.state.count + 1 };
-      break
+      break;
     case "SUBSTRACT":
       this.state = { count: this.state.count - 1 };
-      break
+      break;
     case "RESET":
       this.state = { count: 0 };
-      break
-      default
-      break
+      break;
+    default:
+      break;
   }
 };
