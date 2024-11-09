@@ -9,5 +9,9 @@ store.dispatch = function (action) {
   switch (action.type) {
     case "ADD":
       this.state = { count: this.state.count + 1 };
+    case "SUBSTRACT":
+      this.state = { count: this.state.count - 1 };
+    case "RESET":
+      this.state = { count: 0 };
   }
 };
