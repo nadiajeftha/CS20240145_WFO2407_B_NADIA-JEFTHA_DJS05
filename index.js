@@ -1,7 +1,7 @@
 const store = {
   state: { count: 0 },
+  listeners: [],
 };
 store.getState = function () {
-  return state;
+  return this.state;
 };
-console.log(store.getState());
