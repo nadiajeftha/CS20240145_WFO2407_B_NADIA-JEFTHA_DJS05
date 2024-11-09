@@ -10,7 +10,7 @@ store.dispatch = function (action) {
     case "ADD":
       this.state = { count: this.state.count + 1 };
       break;
-    case "SUBSTRACT":
+    case "SUBTRACT":
       this.state = { count: this.state.count - 1 };
       break;
     case "RESET":
@@ -19,4 +19,11 @@ store.dispatch = function (action) {
     default:
       break;
   }
+  this.listeners.forEach((listener) => listener(this.state));
 };
+store.subscribe = function (listener) {
+  this.listeners.push(listener);
+};
+store.subscribe((state) => {
+  console.log(state.count);
+});
